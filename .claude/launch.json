@@ -3,9 +3,10 @@
   "configurations": [
     {
       "name": "web",
-      "runtimeExecutable": "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
-      "runtimeArgs": ["-m", "http.server", "8000"],
-      "port": 8000
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["-c", "exec /Library/Frameworks/Python.framework/Versions/3.11/bin/python3 -m http.server \"${PORT:-8000}\""],
+      "port": 8000,
+      "autoPort": true
     }
   ]
 }
